@@ -40,7 +40,6 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.9;
   visibility: hidden;
 
   &.show{
@@ -60,6 +59,7 @@
   }
 
   &-nav{
+    opacity: 0.9;
     margin: 0;
     padding: 0;
     background: darken($primary-color, 5);
@@ -87,7 +87,7 @@
     .portrait{
       width: 250px;
       height: 250px;
-      background: url(/dist/img/resources/me.jpg);
+      background: url(/dist/img/resources/me_250.png);
       border-radius: 50%;
       border: solid 3px $secondary-color;
     }
