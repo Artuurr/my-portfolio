@@ -9,12 +9,14 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #fff;
+    background: #000;
     transition: all 0.5s ease-out; }
+  .menu-btn.home .btn-line {
+    background: #eee; }
   .menu-btn.close {
     transform: rotate(180deg); }
     .menu-btn.close .btn-line {
-      background: #000; }
+      background: #eee; }
       .menu-btn.close .btn-line:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px); }
       .menu-btn.close .btn-line:nth-child(2) {
@@ -38,18 +40,18 @@
     width: 50%;
     height: 100vh;
     overflow: hidden;
-    opacity: 0.9; }
+    opacity: 0.95; }
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: #d5d5d5;
+    background: #a2a2a2;
     list-style: none;
     transform: translate3d(0, -100%, 0);
     transition: all 0.5s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
-    background: #d5d5d5;
+    background: #a2a2a2;
     transform: translate3d(0, 100%, 0);
     transition: all 0.5s ease-out; }
     .menu-branding.show {
@@ -58,19 +60,18 @@
       width: 250px;
       height: 250px;
       background: url(/dist/img/resources/me_250.png);
-      border-radius: 50%;
-      border: solid 3px #656176; }
+      border-radius: 50%; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
     transition: all 0.5s ease-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.current > a {
-      color: #656176; }
+      color: #eee; }
   .menu .nav-link {
     display: inline-block;
     position: relative;
-    font-size: 30px;
+    font-size: 25px;
     text-transform: uppercase;
     padding: 1rem 0;
     font-weight: 300;
@@ -78,7 +79,7 @@
     text-decoration: none;
     transition: all 0.5s ease-out; }
     .menu .nav-link:hover {
-      color: #656176; }
+      color: #eee; }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.1s; }
@@ -88,9 +89,6 @@
 
 .nav-item:nth-child(3) {
   transition-delay: 0.3s; }
-
-.nav-item:nth-child(4) {
-  transition-delay: 0.4s; }
 
 * {
   box-sizing: border-box; }
@@ -144,30 +142,44 @@ main {
   padding: 4rem;
   min-height: calc(100vh - 60px); }
   main .icons {
-    margin-top: 1rem; }
+    margin-top: 2.5rem; }
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
-        color: #656176;
+        color: #223241;
         transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+    main#home .lg-heading {
+      color: #eee; }
+    main#home .sm-heading {
+      color: #eee; }
+
+a.btn-home {
+  width: 20%;
+  color: #eee;
+  font-size: 1rem;
+  border: 3px #fff solid;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  transition: all 0.5s ease-out; }
+  a.btn-home:hover {
+    background: #eee;
+    color: #000; }
 
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bioimage bio bio' 'tool1 tool2 tool3';
+  grid-template-areas: 'bio bio bio' 'tool1 tool2 tool3';
   grid-template-columns: repeat(3, 1fr); }
-  .about-info .bio-image {
-    grid-area: bioimage;
-    margin: auto;
-    border-radius: 50%;
-    border: #656176 3px solid; }
   .about-info .bio {
     grid-area: bio;
-    font-size: 1.5rem; }
+    font-size: 1.2rem; }
+    .about-info .bio p {
+      font-size: 1.1rem; }
   .about-info .tool-1 {
     grid-area: tool1; }
   .about-info .tool-2 {
@@ -175,9 +187,9 @@ main {
   .about-info .tool-3 {
     grid-area: tool3; }
   .about-info .tool {
-    background: #fbfbfb;
+    background: #f6f6f6;
     padding: 0.5rem;
-    border-bottom: #656176 5px solid;
+    border-bottom: #223241 5px solid;
     box-shadow: 30px 0 40px rgba(0, 0, 0, 0.1), -30px 0px 40px rgba(0, 0, 0, 0.1); }
 
 #main-footer {
@@ -187,6 +199,23 @@ main {
   color: #000;
   height: 60px; }
 
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes .btn-contact {
+    color: #000;
+    font-size: 1rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.5s ease-out; }
+    .boxes .btn-contact:hover {
+      background: #223241;
+      color: #fff; }
+
 @media screen and (max-width: 768px) {
   main {
     align-items: center;
@@ -194,6 +223,10 @@ main {
     main .lg-heading {
       line-height: 1;
       margin-bottom: 1rem; }
+    main .btn-home {
+      margin: auto;
+      margin-bottom: 2rem;
+      min-width: 80px; }
   ul.menu-nav,
   div.menu-branding {
     float: none;
